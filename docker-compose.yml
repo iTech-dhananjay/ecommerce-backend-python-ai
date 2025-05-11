@@ -1,24 +1,10 @@
 version: '3.8'
 
 services:
-  ecommerce-python-app:
-    container_name: ecommerce-python-app
-    build: .
-    ports:
-      - "8000:8000"
-    volumes:
-      - .:/app
+  ecom_pg_db:
+    container_name: pecom-db
+    image: postgres:14
     env_file:
       - .env
-    depends_on:
-      - ecom_pg_db
-
-  ecom_pg_db:
-    container_name: ecom-pg-db
-    image: postgres:14
-    environment:
-      POSTGRES_USER: ecom_pg_user
-      POSTGRES_PASSWORD: ecom_pg_pass
-      POSTGRES_DB: ecom_pg_db
     ports:
-      - "5432:5432"
+      - "5435:5432"
