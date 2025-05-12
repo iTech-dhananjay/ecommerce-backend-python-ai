@@ -2,6 +2,9 @@ from fastapi import APIRouter, Depends, File, UploadFile
 from app.core.security import require_role
 from openai import OpenAI
 import tempfile
+from app.core.config import settings
+from openai import OpenAI
+
 
 router = APIRouter()
 

@@ -1,3 +1,5 @@
+from pydantic_settings import BaseSettings
+
 class Settings(BaseSettings):
     PROJECT_NAME: str = "ecommerce-backend-python"
     POSTGRES_USER: str
@@ -10,6 +12,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     OPENAI_API_KEY: str
     STRIPE_SECRET_KEY: str
+    CORS_ORIGINS: list[str] = ["http://localhost:8000"]
 
     class Config:
         env_file = ".env"

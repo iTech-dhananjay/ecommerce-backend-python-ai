@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  ecom_pg_db:
+  pecom_pg_db:
     container_name: pecom-db
     image: postgres:14
     env_file:
